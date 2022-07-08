@@ -14,7 +14,6 @@ from folium.plugins           import MarkerCluster
 from streamlit_folium         import folium_static
 from matplotlib.pyplot        import figimage
 from distutils.fancy_getopt   import OptionDummy
-from datetime                 import datetime 
 
 st.set_page_config(page_title='Proyecto Final',
                     layout="wide",

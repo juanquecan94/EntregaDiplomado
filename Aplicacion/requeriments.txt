@@ -1,4 +1,5 @@
 joblib
+turtle
 folium
 matplotlib
 streamlit
