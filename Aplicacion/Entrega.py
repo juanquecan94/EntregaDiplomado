@@ -1,6 +1,5 @@
 from datetime import datetime
 import json
-from turtle import pu
 import folium
 import numpy as np
 import pandas as pd
