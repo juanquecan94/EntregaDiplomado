@@ -1,8 +1,9 @@
 matplotlib
 streamlit
 pandas
-plotly
 streamlit_folium
 boto3
-xgboost==1.4.2.
+xgboost==1.4.2
 DateTime==4.3
+plotly==4.14.3
+plotly-express==0.4.1
