@@ -2,7 +2,6 @@ joblib
 matplotlib
 streamlit
 pandas
-seaborn
 numpy
 plotly
 streamlit_folium
