@@ -72,12 +72,6 @@ def filters_grade(pData):
     st.plotly_chart(fig, use_container_width=True)
     ## fin
 
-    f_bathrooms = st.sidebar.selectbox('Numero maximo de baños',sorted(set(pData['bathrooms'].unique())))
-
-    f_bedrooms = st.sidebar.selectbox('Numero maximo de habitaciones',sorted(set(pData['bedrooms'].unique())))
-
-    f_floors = st.sidebar.selectbox('Numero maximo de pisos',sorted(set(pData['floors'].unique())))
-
     return None
 
 def map_generate(pData):
@@ -119,6 +113,25 @@ def map_generate(pData):
 
     return None
 
+def metrics(pData):
+    
+    f_bathrooms = st.sidebar.selectbox('Numero maximo de baños',sorted(set(pData['bathrooms'].unique())))
+
+    f_bedrooms = st.sidebar.selectbox('Numero maximo de habitaciones',sorted(set(pData['bedrooms'].unique())))
+
+    col1, col2 = st.columns(2)
+
+    col1.header('Casas por No de habitaciones')
+    df = pData[pData['bedrooms'] < f_bedrooms]
+    fig = px.histogram(df, x='bedrooms')
+    col1.plotly_chart(fig, use_container_width=True)
+
+    col2.header('Casas por No de baños')
+    df = pData[pData['bathrooms'] < f_bathrooms]
+    fig = px.histogram(df, x='bathrooms')
+    col2.plotly_chart(fig, use_container_width=True)
+    return None
+
 if __name__ == '__main__':
     pUrl = 'https://raw.githubusercontent.com/juanquecan94/Diplomado/master/Aplicacion/Data/kc_house_data.csv'
     pData = get_dataContext(pUrl)
@@ -128,3 +141,6 @@ if __name__ == '__main__':
 
     ## Mapa
     map_generate(pData)
+
+    ## Metricas
+    metrics(pData)
