@@ -1,14 +1,8 @@
 from datetime import datetime
-import numpy as np
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
 
-from PIL                      import Image
 from plotly                   import express as px
-from folium.plugins           import MarkerCluster
-from matplotlib.pyplot        import figimage
-from distutils.fancy_getopt   import OptionDummy
 
 st.set_page_config(page_title='Proyecto Final',
                     layout="wide",
